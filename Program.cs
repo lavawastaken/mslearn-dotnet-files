@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 
 var salesFiles = FindFile("stores");
+FindDirectory();
+static void FindDirectory() 
+    {
+        string docs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        Console.WriteLine(Path.Combine(docs,"stores"));
+        Console.WriteLine(Path.GetExtension("sales"));
+    }
+
 
 foreach (var file in salesFiles)
 {
-    Console.WriteLine(file);
+    Console.WriteLine();
 }
 
 IEnumerable<string> FindFile(string folderName)
